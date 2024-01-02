@@ -1,12 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Asap:wght@700&display=swap');
 
+@font-face {
+    font-family: 'metropolis@400';
+    src: url('./fonts/Metropolis-Regular.otf');
+}
+
+@font-face {
+    font-family: 'metropolis@600';
+    src: url('./fonts/Metropolis-SemiBold.otf');
+}
+
+@font-face {
+    font-family: 'metropolis@900';
+    src: url('./fonts/Metropolis-Black.otf');
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body {
-    font-family: 'metropolis';   /* not founddddd */
+    font-family: 'metropolis@600';   /* not founddddd */
 }
 .container {
     display: flex;
@@ -15,6 +30,9 @@ body {
     width: 5%;
     padding: 1.1% 1.1% 1.5% 1.1%;
     box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.08);
+
+    position: relative;
+    z-index: 2;
 }
 .sidebar-wrapper {
     height: 100%;
@@ -46,6 +64,17 @@ body {
     left: 0;
 }
 
+/* sticky */
+.messages,
+.top,
+.right-top {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+}
+/* end sticky */
+
 /* left */
 .left {        
     width: 25%;
@@ -65,7 +94,6 @@ body {
 }
 h3 {         /* affecting all h3 */
     font-size: 1.25rem;
-    font-weight: 600;
 }
 .messages div:first-child img {
    margin: 6px 10px 0 2px;
@@ -79,7 +107,6 @@ h3 {         /* affecting all h3 */
     border: 1px solid transparent;
     background: #EDF2F7;
     border-radius: 24px;
-    font-weight: 600;
 }
 .messages div:last-child {
     width: 40px;
@@ -106,15 +133,16 @@ h3 {         /* affecting all h3 */
 }
 .left-middle input {
     width: 100%;
-    font-size: 0.875rem;
-    font-weight: 400;
     border: none;
     outline: none;
     background-color: #F3F3F3;
 }
-.left-middle input::placeholder {
+.left-middle input::placeholder,
+.input-box input::placeholder {
     color: rgba(0, 0, 0, 0.4);
     background: #F3F3F3;
+    font-size: 0.875rem;
+    font-family: 'metropolis@400';
 }
 .left-middle div img {
     margin-top: 2px;
@@ -148,13 +176,11 @@ h3 {         /* affecting all h3 */
 }
 h4 {    /* affecting all h4 */
     font-size: 0.875rem;
-    font-weight: 600;
 }
 .text p,
 .member-profile p {
     color: rgba(0, 0, 0, 0.40);
     font-size: 0.75rem;
-    font-weight: 600;
     padding-bottom: 8px;
 }
 .text p span {
@@ -203,8 +229,12 @@ h4 {    /* affecting all h4 */
     display: flex;
     gap: 16px;
 }
-.middle .top .page .page-text div span {
-    padding-left: 8px;
+.middle .top .page .page-text .online {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.6);
 }
 .middle .top .call {
     display: flex;
@@ -217,7 +247,6 @@ h4 {    /* affecting all h4 */
 .top .call p {
     color:  #615EF0;
     font-size: 1rem;
-    font-weight: 600;
 }
 /* middle-section2 */
 .middle-section2 {
@@ -260,7 +289,7 @@ h4 {    /* affecting all h4 */
     background-color: #F1F1F1;
     padding: 8px 16px;
     font-size: 0.875rem;
-    font-weight: 400;
+    font-family: 'metropolis@400';
     border-radius: 12px;
 }
 .chat-text2 p {
@@ -291,6 +320,9 @@ h4 {    /* affecting all h4 */
     width: 100%;
     outline: none;
 }
+.input-box input::placeholder {
+    background: white;
+}
 
 /* right */
 .right {      
@@ -311,6 +343,7 @@ h4 {    /* affecting all h4 */
     top: 23%;
     left: 25%;
 }
+/* team-members */
 .team-members {
     display: flex;
     flex-direction: column;
@@ -327,8 +360,11 @@ h4 {    /* affecting all h4 */
 .member {
     padding: 12px;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     gap: 16px;
+}
+.member-profile p {
+    margin-top: 5px;
 }
 .files,
 .documents {
@@ -365,7 +401,6 @@ h4 {    /* affecting all h4 */
 .doc-text p {
     color: rgba(0, 0, 0, 0.40);
     font-size: 0.75rem;
-    font-weight: 600;
     padding-top: 2px;
 }
 .doc-text p span {
