@@ -10,11 +10,6 @@
     src: url('./fonts/Metropolis-SemiBold.otf');
 }
 
-@font-face {
-    font-family: 'metropolis@900';
-    src: url('./fonts/Metropolis-Black.otf');
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -30,7 +25,6 @@ body {
     width: 5%;
     padding: 1.1% 1.1% 1.5% 1.1%;
     box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.08);
-
     position: relative;
     z-index: 2;
 }
@@ -397,7 +391,6 @@ h4 {    /* affecting all h4 */
     justify-content: center;
     align-items: center;
 }
-
 .doc-text p {
     color: rgba(0, 0, 0, 0.40);
     font-size: 0.75rem;
@@ -417,4 +410,137 @@ h4 {    /* affecting all h4 */
 }
 .purple {
     background-color: #FAF5FF;
+}
+
+
+/* Media Query for large tablets */
+@media (max-width: 1230px) {
+    .sidebar {  
+        padding: 1.1% 1% 1.5% 1%;
+    }
+    .sidebar-wrapper .first-letter {
+        padding: 22% 0px;    
+        font-size: 1.1rem;
+    }
+
+    .icon-comtainer div {
+        width: 1.65rem;
+    }
+    .icon-comtainer div img {
+        width: 100%;
+    }
+
+    /* left */
+    .messages {
+        padding: 5%;     
+    }
+    h3 {         /* affecting all h3 */
+        font-size: 1rem;
+    }
+    .messages div:first-child img {
+        margin: 2px 10px 0 2px;
+    }
+    .messages div p,
+    .team-members .teams-profile p,
+    .file p {
+        font-size: 0.7rem;
+    }
+    .messages div:last-child {
+        width: 37px;
+        height: 37px;
+    }
+    .messages div:last-child img {
+        top: 25%;
+        left: 25%;
+    }
+    /* left-middle */
+    .left-middle {
+        padding: 8px 15px;
+    }
+    .left-bottom .box .box-wrapper .item .time {
+        font-size: 0.7rem;
+    }
+    h4 {    /* affecting all h4 */
+        font-size: 0.7rem;
+    }
+    .text p,
+    .member-profile p {
+        font-size: 0.65rem;
+    }
+    .mini-text button {
+        padding: 3px 8px;
+        font-size: 0.64rem;
+    }
+    
+    /* middle */
+    .middle .top,
+    .right-top {              
+        padding: 22px; 
+        height: 60px;
+    }
+    .middle .top .page .page-text .online {
+        font-size: 0.65rem;
+    }
+    .middle .top .call {
+        padding: 8px 15px;
+    }
+    .top .call p {
+        color:  #615EF0;
+        font-size: 0.9rem;
+    }
+    /* middle-section2 */
+    .middle-section2 {
+        padding: 22px;
+    }
+    /* chats */
+    .chat-text1 p,
+    .chat-text2 p {
+        font-size: 0.75rem;
+    }
+    .doc-text p {
+        font-size: 0.65rem;
+    }
+}
+
+    /* Media Query for small tablets */
+@media (max-width: 1100px) {
+    .right {
+        display: none;
+    }
+    .left {        
+        width: 35%;
+        height: 120vh;
+        border-right: 1px solid #EDF2F7;
+    }
+    .middle {       
+        width: 60%;
+        position: relative;
+    }
+}
+
+    /* Media Query for mobile screens */
+@media (max-width: 740px) {
+    .left{
+        display: none;
+    }
+    .middle {       
+        width: 90%;
+        height: 100vh;
+    }
+    .sidebar {  
+        width: 10%;
+    }
+    .sidebar-wrapper .icon-comtainer {
+        margin: auto;
+    }
+    .sidebar-wrapper .icon-comtainer div:last-child {
+        bottom: 20px;
+    } 
+}
+
+    /* Media Query for very small screens */
+@media (max-width: 380px) {
+    .middle {       
+        height: 120vh;
+    }
 }
